@@ -20,22 +20,24 @@ export default class TranscribePlugin extends Plugin {
 
 		// This creates an icon in the left ribbon.
 		const transcribeRibbonIcon = this.addRibbonIcon('mic-off', 'Transcribe', (_evt: MouseEvent) => {
-		if (isTranscribing) {
-				// Stop transcribing
-				new Notice("Stopped transcribing.");
-				isTranscribing = false;
-				// Update icon and tooltip for start state
-				setIcon(transcribeRibbonIcon, 'mic-off');
-				transcribeRibbonIcon.setAttribute('aria-label', 'Start Listening');
-			} else {
-				// Start transcribing
-				new Notice("Started transcribing.");
-				isTranscribing = true;
-				// Update icon and tooltip for stop state
-				setIcon(transcribeRibbonIcon, 'mic');
-				transcribeRibbonIcon.setAttribute('aria-label', 'Stop Listening');
-			}
+			if (isTranscribing) {
+					// Stop transcribing
+					new Notice("Stopped transcribing.");
+					isTranscribing = false;
+					// Update icon and tooltip for start state
+					setIcon(transcribeRibbonIcon, 'mic-off');
+					transcribeRibbonIcon.setAttribute('aria-label', 'Start Listening');
+				} else {
+					// Start transcribing
+					new Notice("Started transcribing.");
+					isTranscribing = true;
+					// Update icon and tooltip for stop state
+					setIcon(transcribeRibbonIcon, 'mic');
+					transcribeRibbonIcon.setAttribute('aria-label', 'Stop Listening');
+				}	
 		});
+
+		transcribeRibbonIcon.id = "transcribe-ribbon-icon";
 
 		
 		// Start transcribing command

@@ -19,7 +19,7 @@ export default class TranscribePlugin extends Plugin {
 		let isTranscribing: boolean = false;
 
 		// This creates an icon in the left ribbon.
-		const ribbonIconEl = this.addRibbonIcon('dice', 'Sample Plugin', (_evt: MouseEvent) => {
+		const ribbonIconEl = this.addRibbonIcon('mic-off', 'Transcribe', (_evt: MouseEvent) => {
 		if (isTranscribing) {
 				// Stop transcribing
 				new Notice("Stopped transcribing.");

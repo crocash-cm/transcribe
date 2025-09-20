@@ -19,21 +19,21 @@ export default class TranscribePlugin extends Plugin {
 		let isTranscribing: boolean = false;
 
 		// This creates an icon in the left ribbon.
-		const ribbonIconEl = this.addRibbonIcon('mic-off', 'Transcribe', (_evt: MouseEvent) => {
+		const transcribeRibbonIcon = this.addRibbonIcon('mic-off', 'Transcribe', (_evt: MouseEvent) => {
 		if (isTranscribing) {
 				// Stop transcribing
 				new Notice("Stopped transcribing.");
 				isTranscribing = false;
 				// Update icon and tooltip for start state
-				setIcon(ribbonIconEl, 'mic-off');
-				ribbonIconEl.setAttribute('aria-label', 'Start Listening');
+				setIcon(transcribeRibbonIcon, 'mic-off');
+				transcribeRibbonIcon.setAttribute('aria-label', 'Start Listening');
 			} else {
 				// Start transcribing
 				new Notice("Started transcribing.");
 				isTranscribing = true;
 				// Update icon and tooltip for stop state
-				setIcon(ribbonIconEl, 'mic');
-				ribbonIconEl.setAttribute('aria-label', 'Stop Listening');
+				setIcon(transcribeRibbonIcon, 'mic');
+				transcribeRibbonIcon.setAttribute('aria-label', 'Stop Listening');
 			}
 		});
 
@@ -48,8 +48,8 @@ export default class TranscribePlugin extends Plugin {
 					new Notice("Started transcribing.");
 					isTranscribing = true;
 					// Update icon and tooltip for stop state
-					setIcon(ribbonIconEl, 'mic');
-					ribbonIconEl.setAttribute('aria-label', 'Stop Listening');
+					setIcon(transcribeRibbonIcon, 'mic');
+					transcribeRibbonIcon.setAttribute('aria-label', 'Stop Listening');
 				}
 			}
 		});
@@ -64,8 +64,8 @@ export default class TranscribePlugin extends Plugin {
 					new Notice("Stopped transcribing.");
 					isTranscribing = false;
 					// Update icon and tooltip for start state
-					setIcon(ribbonIconEl, 'mic-off');
-					ribbonIconEl.setAttribute('aria-label', 'Start Listening');
+					setIcon(transcribeRibbonIcon, 'mic-off');
+					transcribeRibbonIcon.setAttribute('aria-label', 'Start Listening');
 				}
 			}
 		});

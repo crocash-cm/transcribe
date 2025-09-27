@@ -6,6 +6,9 @@
 	"description": "Transcribes audio recordings into written Obsidian notes.",
 	"author": "Jakob Hodginkson, Joseph Ashford",
 	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+    "fundingUrl": {
+	"https://github.com/y4k3-dev",
+	"https://github.com/crocash-dev"
+    },
 	"isDesktopOnly": false
 }
